@@ -1,14 +1,20 @@
 import { fastify, FastifyInstance } from 'fastify';
 
-const server: FastifyInstance = fastify({ logger: true });
+const f: FastifyInstance = fastify({ logger: true });
 
-server.get('/', function (request: any, reply: any) {
-  reply.send('Primer mensaje');
+f.get('/', function (request: any, reply: any) {
+  console.log(request.body);
+  reply.send('Primer mensaje desplegado en ruta raíz');
 });
 
-server.listen({ port: 3002 }, function (err: any) {
+f.get('/test', function (request: any, reply: any) {
+  console.log(request.body);
+  reply.send('Mensaje desplegado en la ruta raíz slash test');
+});
+
+f.listen(function (err: any) {
   if (err) {
-    server.log.error(err);
+    f.log.error(err);
     process.exit(1);
   }
 });
