@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "exports": "./dist/index.js",
+  "exports": "./dist/main.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "eslint": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "tsc": "tsc --noEmit",
