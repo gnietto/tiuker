@@ -11,7 +11,9 @@
     "eslint": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "tsc": "tsc --noEmit",
     "nodestart": "nodemon --watch './**/*.{ts}' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/main.ts",
-    "dev": "tsc-watch --onSuccess \"pnpm run nodestart\""
+    "dev": "tsc-watch --onSuccess \"pnpm run nodestart\"",
+    "build": "tsc",
+    "": ""
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
