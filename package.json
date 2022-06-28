@@ -1,0 +1,33 @@
+{
+  "name": "@gnietto/tiuker",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "eslint": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "tsc": "tsc --noEmit",
+    "nodestart": "nodemon --watch './**/*.{ts}' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/main.ts",
+    "dev": "tsc-watch --onSuccess \"pnpm run nodestart\""
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.18",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.8.1",
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@fastify/postgres": "^5.0.0",
+    "fastify": "^4.1.0",
+    "pg": "^8.7.3"
+  }
+}
