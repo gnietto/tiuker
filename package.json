@@ -10,10 +10,9 @@
   "scripts": {
     "eslint": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "tsc": "tsc --noEmit",
-    "nodestart": "nodemon --watch './**/*.{ts}' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/main.ts",
-    "dev": "tsc-watch --onSuccess \"pnpm run nodestart\"",
-    "build": "tsc",
-    "": ""
+    "start": "nodemon --watch './**/*.{ts}' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/main.ts",
+    "dev": "tsc-watch --onSuccess \"pnpm run start\"",
+    "build": "tsc -p tsconfig.json"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
@@ -32,7 +31,9 @@
   },
   "dependencies": {
     "@fastify/postgres": "^5.0.0",
+    "@fastify/static": "^6.4.0",
     "fastify": "^4.1.0",
+    "fastify-plugin": "^3.0.1",
     "pg": "^8.7.3"
   }
 }
