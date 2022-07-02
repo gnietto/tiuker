@@ -1,5 +1,5 @@
 import { fastify, FastifyInstance } from 'fastify';
-import staticAssets from '../plugins/staticAssets.js';
+import staticAssets from './plugins/staticAssets.js';
 
 const PORT: number = 3002;
 const f: FastifyInstance = fastify({ logger: true });

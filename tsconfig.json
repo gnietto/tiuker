@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
+    "rootDir": "./",
     "outDir": "./dist",
     "lib": ["es2021"],
     "module": "es2022",

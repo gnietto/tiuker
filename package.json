@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "exports": "./dist/src/main.mjs",
+  "exports": "./dist/src/main.js",
   "engines": {
     "node": "16.x"
   },
@@ -12,7 +12,7 @@
     "tsc": "tsc --noEmit",
     "start": "nodemon --watch './**/*.{ts}' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/main.ts",
     "dev": "tsc-watch --onSuccess \"pnpm run start\"",
-    "build": "tsc -p tsconfig.json && cp -R public dist"
+    "build": "tsc -p tsconfig.json && cp -R src/public dist/src/public"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
