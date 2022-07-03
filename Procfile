@@ -1,1 +1,1 @@
-web: pnpm run start
+web: node dist/src/main.js
