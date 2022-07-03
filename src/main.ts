@@ -1,24 +1,26 @@
 import * as dotenv from 'dotenv';
-dotenv.config();
 import { fastify, FastifyInstance } from 'fastify';
 import staticAssets from './plugins/staticAssets.js';
 
+dotenv.config();
+
 const f: FastifyInstance = fastify({ logger: true });
-const puerto: any = process.env['PORT'];
+// @ts-ignore
+const puerto: any = process.env.PORT;
 
 f.register(staticAssets);
 
-f.get('/', function (request: any, reply: any) {
+f.get('/', (request: any, reply: any) => {
   console.log(request.body);
   return reply.sendFile('test.html');
 });
 
-f.get('/test', function (request: any, reply: any) {
+f.get('/test', (request: any, reply: any) => {
   console.log(request.body);
   return reply.send('Mensaje desplegado en la ruta /test');
 });
 
-f.listen({ port: puerto }, function (err: any, address: any) {
+f.listen({ port: puerto }, (err: any, address: any) => {
   if (err) {
     f.log.error(err);
     process.exit(1);
