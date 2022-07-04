@@ -12,7 +12,7 @@
     "tsc": "tsc --noEmit",
     "start": "nodemon --watch './**/*.{ts}' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/main.ts",
     "dev": "tsc-watch --onSuccess \"pnpm run start\"",
-    "build": "tsc -p tsconfig.json && cp -R src/public dist/src/public"
+    "build": "tsc && cp -R src/public dist/src/public"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
