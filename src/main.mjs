@@ -17,7 +17,7 @@ f.get('/test', (request, reply) => {
   return reply.send('Mensaje desplegado en la ruta /test');
 });
 
-f.listen({ port: puerto }, (err, address) => {
+f.listen({ port: puerto, host: '0.0.0.0' }, (err, address) => {
   if (err) {
     f.log.error(err);
     process.exit(1);
